@@ -5,6 +5,7 @@ import java.sql.Date;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
@@ -21,7 +22,8 @@ public class Production {
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date date;
 	
-	private Boolean state;
+	private Integer state, price;
 	
-	private Integer price;
+	@ManyToOne
+	private Chicken chicken;
 }
